@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="calc.css">
+  </head>
+  <body>
+    <fieldset style="border-spacing: 20px;">
+    <legend style="text-align:center ;font-size:40px;">basic calculator </legend>
+    <form name="calculate">
+    <input class="inp" type="text" name="text2" placeholder="result" readonly><br></br>
+    <input type="text" class="inp" name="text1" placeholder="enter a number" readonly>
+                        <br></br>    <br>
+                        <div class="buttonGroup">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+        <button class="btn"   onclick="document.calculate.text1.value+='1';return false">1</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='2';return false">2</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='3';return false">3</button>
+         <button class="btn"  onclick="document.calculate.text1.value+='4';return false">4 </button>
+         <button class="btn"  onclick="document.calculate.text1.value+='5';return false">5</button>
+         <button class="btn"  onclick="document.calculate.text1.value+='6';return false">6</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='7';return false">7</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='8';return false">8</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='9';return false">9</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='0';return false">0</button>
+        </div>
+        <div class="buttonGroup"> 
+        <button class="btn"   onclick="document.calculate.text1.value+='**';return false;">x<sup>n</sup></sup></button>
+        <button class="btn"   onclick="document.calculate.text1.value+='+';return false">+</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='-';return false">-</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='*';return false">+</button>
+        
+        <button class="btn"   onclick="document.calculate.text1.value+='/';return false">&#247</button>
+        <button class="btn"   onclick="document.calculate.text1.value+='%';return false">%</button>
+        <button class="btn" type="reset" value="del" ><i class="fa fa-trash-o"></i></button>
+        <button class="btn"   onclick="document.calculate.text1.value+='.';return false">.</button>
+        <button class="btn"   onclick="process(16);return false">=</button>
+        
+        <button class="btn"   onclick="process(15);return false">&#8730</button>
+        
+                        </div>
+                        <div class="buttonGroup">  
+                          <button class="btn"   onclick="process(17);return false"> <<</button>
+        <button class="btn"   onclick="process(18);return false">sin </button>
+        <button class="btn"   onclick="process(19);return false"> cos</button>
+        <button class="btn"   onclick="process(20);return false"> tan</button>
+        
+        </div>
+        </form>
+      </fieldset>
+        
+    <script>
+     function process(a)
+     {   
+         switch(a)
+         {
+           case 15: document.calculate.text2.value="&#8730";
+                    var b=document.calculate.text1.value;
+                    document.calculate.text2.value=Math.sqrt(b);break;
+         case 16:
+         if(eval(document.calculate.text1.value)=='Infinity' || eval(document.calculate.text1.value)=='NaN')
+                {
+                   document.calculate.text2.value=0;
+                }
+                else
+                {
+                    var expression=document.calculate.text1.value;
+                    document.calculate.text2.value=eval(expression);
+                }
+                break;
+         case 17: 
+                  var  b=document.calculate.text1.value;
+                  var c= b.substr(0,b.length-1);
+                  document.calculate.text1.value=c;break; 
+         case 18: b=document.calculate.text1.value;
+                  document.calculate.text2.value=Math.sin(b*0.017483);break; 
+         case 19:  b=document.calculate.text1.value;
+                  document.calculate.text2.value=Math.cos(b*0.017483);break; 
+         case 20:  b=document.calculate.text1.value;
+                  document.calculate.text2.value=Math.tan(b*0.017483);break; 
+         case 21: b=document.calculate.text1.value;
+                 break;      
+      } 
+     }
+      </script>
+    </body>
+</html>
